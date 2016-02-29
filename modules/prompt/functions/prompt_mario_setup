@@ -4,7 +4,7 @@ pmodload 'helper'
 function prompt_mario_print_segment {
   local fg
   [[ -n "$1" ]] && fg="%F{$1}" || fg="%f"
-  print -n "$fg "
+  print -n "$fg"
   [[ -n "$2" ]] && print -n "$2"
 }
 
@@ -12,7 +12,7 @@ function prompt_mario_build_prompt {
   prompt_mario_print_segment blue '$_prompt_mario_pwd'
 
   if [[ -n "$git_info" ]]; then
-    prompt_mario_print_segment green '${(e)git_info[ref]}${(e)git_info[status]}'
+    prompt_mario_print_segment green '${(e)git_info[ref]}${(e)git_info[status]} ❯ '
   fi
 }
 
@@ -20,10 +20,10 @@ function prompt_mario_pwd {
   local pwd="${PWD/#$HOME/~}"
 
   if [[ "$pwd" == (#m)[/~] ]]; then
-    _prompt_mario_pwd="$MATCH"
+    _prompt_mario_pwd="$MATCH ❯ "
     unset MATCH
   else
-    _prompt_mario_pwd="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%}"
+    _prompt_mario_pwd="${${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}//\%/%%}/${${pwd:t}//\%/%%} ❯ "
   fi
 }
 
@@ -78,7 +78,7 @@ function prompt_mario_setup {
     'status' '%s%D%A%B%S%a%d%m%r%U%u'
 
   # Define prompts.
-  PROMPT=' ${(e)$(prompt_mario_build_prompt)} ${editor_info[keymap]} '
+  PROMPT='${(e)$(prompt_mario_build_prompt)}'
   RPROMPT='%F{blue}[%F{green}%D{%H:%M:%S}%F{blue}]%f'
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
