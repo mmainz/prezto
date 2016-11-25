@@ -40,6 +40,7 @@ export NVM_DIR="$HOME/.nvm"
 source "$HOME/.nvm/nvm.sh"
 
 export PATH="$HOME/.cargo/bin:$PATH"
+export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
 
 docker-rmi-untagged() {
     docker rmi $(docker images | grep "^<none>" | awk '{ print $3 }')
