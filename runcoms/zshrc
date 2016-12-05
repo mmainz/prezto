@@ -15,7 +15,6 @@ fi
 alias ec="emacsclient -n"
 alias dc="docker-compose"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-alias miex="iex -S mix"
 
 if [[ -n $SSH_CONNECTION ]]; then
     export EDITOR='vim'
