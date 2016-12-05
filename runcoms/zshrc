@@ -36,8 +36,8 @@ eval "$(exenv init -)"
 export PATH="$HOME/bin:$PATH"
 export PATH="./bin:$PATH"
 
-export NVM_DIR="$HOME/.nvm"
-source "$HOME/.nvm/nvm.sh"
+export NVM_DIR="$HOME/.dotfiles/nvm"
+source "$HOME/.dotfiles/nvm/nvm.sh"
 
 export PATH="$HOME/.cargo/bin:$PATH"
 export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
