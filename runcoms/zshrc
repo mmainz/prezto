@@ -57,3 +57,6 @@ clone-ivx() {
 
 # load local config if available
 [[ -f ~/.local-env ]] && source ~/.local-env
+
+# hook direnv
+eval "$(direnv hook zsh)"
