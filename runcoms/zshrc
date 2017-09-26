@@ -30,6 +30,7 @@ export PATH="$GOPATH/bin:$PATH"
 
 eval "$(rbenv init -)"
 
+export ERL_AFLAGS="-kernel shell_history enabled"
 export PATH="$HOME/.exenv/bin:$PATH"
 eval "$(exenv init -)"
 
