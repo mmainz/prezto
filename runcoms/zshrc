@@ -28,18 +28,9 @@ export GIT_EDITOR "emacsclient"
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
 
-export GOPATH="$HOME/Development/go"
-export PATH="$GOPATH/bin:$PATH"
-
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="./bin:$PATH"
-
-export NVM_DIR="$HOME/.dotfiles/nvm"
-source "$HOME/.dotfiles/nvm/nvm.sh"
-
-export PATH="$HOME/.cargo/bin:$PATH"
-export RUST_SRC_PATH="$HOME/.multirust/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src"
 
 docker-rmi-untagged() {
     docker rmi $(docker images | grep "^<none>" | awk '{ print $3 }')
