@@ -25,14 +25,11 @@ fi
 
 export GIT_EDITOR "emacsclient"
 
+. $HOME/.asdf/asdf.sh
+. $HOME/.asdf/completions/asdf.bash
+
 export GOPATH="$HOME/Development/go"
 export PATH="$GOPATH/bin:$PATH"
-
-eval "$(rbenv init -)"
-
-export ERL_AFLAGS="-kernel shell_history enabled"
-export PATH="$HOME/.exenv/bin:$PATH"
-eval "$(exenv init -)"
 
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
