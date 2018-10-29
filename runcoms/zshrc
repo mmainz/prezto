@@ -12,6 +12,8 @@ fi
 
 # Customize to your needs...
 
+export LC_ALL=en_US.UTF-8
+
 alias ec="emacsclient -n"
 alias dc="docker-compose"
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
